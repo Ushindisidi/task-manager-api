@@ -45,7 +45,7 @@ Follow these steps to set up and run the Task Manager API on your local machine.
     
 
 2.  Create and activate a virtual environment:
-   ``` bash
+   ```bash
     python3 -m venv venv
     source venv/scripts/activate```  
     
@@ -65,7 +65,7 @@ Follow these steps to set up and run the Task Manager API on your local machine.
 
 ---
 
-## 💡 Usage and API Endpoints
+### 💡 Usage and API Endpoints
 
 Once the server is running, you can interact with the API using tools like curl, Postman, or through the interactive Swagger UI.
 
@@ -81,29 +81,32 @@ Here, you'll find a complete, interactive documentation of all available endpoin
 1. Create a Task (POST)
 
 ```bash
-curl -X POST "http://localhost:8000/tasks" \ ```
+curl -X POST "http://localhost:8000/tasks" \
      -H "Content-Type: application/json" \
      -d '{
            "title": "Develop Task API",
            "description": "Implement CRUD operations for task management.",
            "status": "in_progress",
            "priority": "high"
-         }'
-2. Get All Tasks(GET)
+         }'```
+         
+ 2. Get All Tasks(GET):
 ```bash
-curl -X GET "http://localhost:8000/tasks" ```
+curl -X GET "http://localhost:8000/tasks"```
 
-3. Update a task(PUT)
+3.   Update a task(PUT):
+
 ```bash
-curl -X PUT "http://localhost:8000/tasks/1" \```
+curl -X PUT "http://localhost:8000/tasks/1" \
      -H "Content-Type: application/json" \
      -d '{
            "status": "completed",
            "description": "API developed and tested."
-         }'
-4. Delete a task(DELETE)
+         }'```
+4.  Delete a task(DELETE):
+
 ```bash
-curl -X DELETE "http://localhost:8000/tasks/1" ```
+curl -X DELETE "http://localhost:8000/tasks/1"```
 
 5.🌐 Deployment
 This API is configured for easy deployment on Vercel.
