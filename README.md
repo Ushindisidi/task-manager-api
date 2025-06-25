@@ -116,6 +116,7 @@ curl -X DELETE "http://localhost:8000/tasks/1"
 ```
 
 5.🌐 Deployment
+
 This API is configured for easy deployment on Vercel.
 A vercel.json file is included in the project root to define the build and routing configurations.
 To deploy:
