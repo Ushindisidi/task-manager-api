@@ -45,9 +45,11 @@ Follow these steps to set up and run the Task Manager API on your local machine.
     
 
 2.  Create and activate a virtual environment:
+   
    ```bash
     python3 -m venv venv
-    source venv/scripts/activate```
+    source venv/scripts/activate
+  ```
     
     
 
