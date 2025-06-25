@@ -60,7 +60,8 @@ Follow these steps to set up and run the Task Manager API on your local machine.
 
 4.  Run the API server using Uvicorn:
     ```bash
-    uvicorn main:app --reload```
+    uvicorn main:app --reload
+    ```
     
     The --reload flag enables auto-reloading so changes to your code are reflected automatically.
 
