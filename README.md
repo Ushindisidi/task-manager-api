@@ -36,7 +36,7 @@ Follow these steps to set up and run the Task Manager API on your local machine.
 * pip (Python package installer)
 * git (for cloning the repository)
 
-### Installation Steps
+## Installation Steps
 
 1.  Clone the repository:
     ```bash
@@ -52,31 +52,33 @@ Follow these steps to set up and run the Task Manager API on your local machine.
 
 3.  Install the required dependencies:
     ```bash
-    pip install -r requirements.txt```
+    pip install -r requirements.txt
+    ```
     
 
 4.  Run the API server using Uvicorn:
     ```bash
-    uvicorn main:app --reload```
+    uvicorn main:app --reload
+    ```
     
     The --reload flag enables auto-reloading so changes to your code are reflected automatically.
 
     You should see output indicating that the server is running on http://127.0.0.1:8000 (or http://localhost:8000).
 
----
 
-### 💡 Usage and API Endpoints
+
+ 💡 Usage and API Endpoints
 
 Once the server is running, you can interact with the API using tools like curl, Postman, or through the interactive Swagger UI.
 
-### Swagger UI
+ Swagger UI
 
 Open your web browser and navigate to:
 http://127.0.0.1:8000/docs
 
 Here, you'll find a complete, interactive documentation of all available endpoints, allowing you to test them directly from your browser.
 
-### Example API Commands (using curl)
+ Example API Commands (using curl)
 
 1. Create a Task (POST)
 
@@ -88,12 +90,13 @@ curl -X POST "http://localhost:8000/tasks" \
            "description": "Implement CRUD operations for task management.",
            "status": "in_progress",
            "priority": "high"
-         }'```
-         
+         }'
+```
+
  2. Get All Tasks(GET):
 ```bash
-curl -X GET "http://localhost:8000/tasks"```
-
+curl -X GET "http://localhost:8000/tasks"
+```
 3.   Update a task(PUT):
 
 ```bash
@@ -102,11 +105,13 @@ curl -X PUT "http://localhost:8000/tasks/1" \
      -d '{
            "status": "completed",
            "description": "API developed and tested."
-         }'```
+         }'
+```
 4.  Delete a task(DELETE):
 
 ```bash
-curl -X DELETE "http://localhost:8000/tasks/1"```
+curl -X DELETE "http://localhost:8000/tasks/1"
+```
 
 5.🌐 Deployment
 This API is configured for easy deployment on Vercel.
