@@ -39,25 +39,25 @@ Follow these steps to set up and run the Task Manager API on your local machine.
 ### Installation Steps
 
 1.  Clone the repository:
-    bash
+    ```bash
     git clone [https://github.com/Ushindisidi/task-manager-api.git]
-    cd task-manager-api
+    cd task-manager-api```
     
 
 2.  Create and activate a virtual environment:
-    bash
+   ``` bash
     python3 -m venv venv
-    source venv/scripts/activate  
+    source venv/scripts/activate```  
     
 
 3.  Install the required dependencies:
-    bash
-    pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt```
     
 
 4.  Run the API server using Uvicorn:
-    bash
-    uvicorn main:app --reload
+    ```bash
+    uvicorn main:app --reload```
     
     The --reload flag enables auto-reloading so changes to your code are reflected automatically.
 
@@ -81,7 +81,7 @@ Here, you'll find a complete, interactive documentation of all available endpoin
 1. Create a Task (POST)
 
 ```bash
-curl -X POST "http://localhost:8000/tasks" \
+curl -X POST "http://localhost:8000/tasks" \ ```
      -H "Content-Type: application/json" \
      -d '{
            "title": "Develop Task API",
@@ -91,18 +91,19 @@ curl -X POST "http://localhost:8000/tasks" \
          }'
 2. Get All Tasks(GET)
 ```bash
-curl -X GET "http://localhost:8000/tasks"
+curl -X GET "http://localhost:8000/tasks" ```
 
 3. Update a task(PUT)
 ```bash
-curl -X PUT "http://localhost:8000/tasks/1" \
+curl -X PUT "http://localhost:8000/tasks/1" \```
      -H "Content-Type: application/json" \
      -d '{
            "status": "completed",
            "description": "API developed and tested."
          }'
 4. Delete a task(DELETE)
-curl -X DELETE "http://localhost:8000/tasks/1"
+```bash
+curl -X DELETE "http://localhost:8000/tasks/1" ```
 
 5.🌐 Deployment
 This API is configured for easy deployment on Vercel.
