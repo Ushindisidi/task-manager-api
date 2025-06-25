@@ -1,7 +1,8 @@
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, Query, status
 from pydantic import BaseModel
 from enum import Enum
 from typing import List, Optional, Dict
+
 app = FastAPI(
     title="Task Manager API",
     description="A simple API to manage freelancer tasks, supporting task creation, retrieval, and deletion (CRUD).",
@@ -23,8 +24,8 @@ class Priority(str, Enum): # Enum for task priority
 class TaskCreate(BaseModel): # Model for task creation
     title: str
     description: Optional[str] = None
-    status: Status = Status
-    priority: Priority = Priority
+    status: Status 
+    priority: Priority
 class Taskupdate(BaseModel): # Model for task update
     title: Optional[str] = None
     description: Optional[str] = None
@@ -36,17 +37,20 @@ class Task(BaseModel): #pydantic model representing a task
     description: Optional[str] = None
     status: Status 
     priority: Priority 
-@app.get("/tasks", response_model=List[Task], status_code=status.HTTP_200_OK)
-async def get_all_tasks(): # Retrieve a list of all tasks
+#---Endpoint features ---
+@app.get("/tasks/", response_model=List[Task], status_code=status.HTTP_200_OK)
+async def get_all_tasks(): #Retrieves a list of all tasks.
     return tasks_db
+
 @app.post("/tasks", response_model=Task, status_code=status.HTTP_201_CREATED)
-async def create_task(task: TaskCreate): # Create a new task
+async def create_task(task: TaskCreate):
     global next_id
     new_task = task.model_dump()
     new_task["id"] = next_id
     tasks_db.append(new_task)
     next_id += 1
     return new_task
+  
 @app.put("/tasks/{task_id}", response_model=Task, status_code=status.HTTP_200_OK)
 async def update_task(task_id: int, task_update: Taskupdate): #Updates an existing task by ID
     for index, task in enumerate(tasks_db): # Iterate through tasks to find the one to update
