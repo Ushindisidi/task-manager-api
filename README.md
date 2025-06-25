@@ -41,13 +41,15 @@ Follow these steps to set up and run the Task Manager API on your local machine.
 1.  Clone the repository:
     ```bash
     git clone [https://github.com/Ushindisidi/task-manager-api.git]
-    cd task-manager-api```
+    cd task-manager-api
+    ```
     
 
 2.  Create and activate a virtual environment:
    ```bash
     python3 -m venv venv
-    source venv/scripts/activate```  
+    source venv/scripts/activate
+    ``` 
     
 
 3.  Install the required dependencies:
